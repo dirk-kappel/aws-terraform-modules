@@ -1,10 +1,11 @@
 #--------------------------------------------------
+#
 # AWS DOCUMENTATION
+#
+# https://docs.aws.amazon.com/vpc/latest/mirroring/vpc-tm.pdf
 #--------------------------------------------------
 
 /*
-https://docs.aws.amazon.com/vpc/latest/mirroring/vpc-tm.pdf
-
 Supported source instance types:
     General Purpose: A1 | M4 | M5 | M5a | M5ad | M5d | M5dn | M5n | M5zn | M6g | M6gd | Mac1 | Mac2 | Mac2-m1ultra | Mac2-m2 | Mac2-m2pro | T3 | T3a | T4g
     Compute Optimized: C4 | C5 | C5a | C5ad | C5d | C5n | C6g | C6gd | C6i
@@ -14,8 +15,11 @@ Supported source instance types:
 */
 
 #--------------------------------------------------
+#
 # TRAFFIC MIRROR TARGET
+#
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ec2_traffic_mirror_target
+#
 #--------------------------------------------------
 
 resource "aws_ec2_traffic_mirror_target" "nlb" {
@@ -52,8 +56,11 @@ resource "aws_ec2_traffic_mirror_target" "gwlb" {
 }
 
 #--------------------------------------------------
+#
 # TRAFFIC MIRROR FILTER
+#
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ec2_traffic_mirror_filter
+#
 #--------------------------------------------------
 
 resource "aws_ec2_traffic_mirror_filter" "filter" {
@@ -66,8 +73,11 @@ resource "aws_ec2_traffic_mirror_filter" "filter" {
 }
 
 #--------------------------------------------------
+#
 # TRAFFIC MIRROR FILTER RULE
+#
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ec2_traffic_mirror_filter_rule
+#
 #--------------------------------------------------
 
 resource "aws_ec2_traffic_mirror_filter_rule" "rule_out" {
@@ -135,8 +145,11 @@ resource "aws_ec2_traffic_mirror_filter_rule" "rule_in" {
 }
 
 #--------------------------------------------------
+#
 # TRAFFIC MIRROR SESSION
+#
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ec2_traffic_mirror_session
+#
 #--------------------------------------------------
 
 resource "aws_ec2_traffic_mirror_session" "session" {
