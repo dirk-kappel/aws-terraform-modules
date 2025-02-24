@@ -14,7 +14,7 @@ variable "vpc_id" {}
 
 variable "application" {
   type    = string
-  default = ""
+  default = null
 }
 
 variable "created_by" {
