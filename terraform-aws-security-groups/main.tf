@@ -13,10 +13,11 @@
 #-------------------------------------------------- 
 
 resource "aws_security_group" "this" {
+  vpc_id = var.vpc_id
+
   description = var.security_group_description
   name_prefix = var.security_group_name_prefix
   name        = var.security_group_name
-  vpc_id      = var.vpc_id
 
   tags = {
     Name = var.security_group_name
