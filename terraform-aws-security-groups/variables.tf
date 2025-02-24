@@ -1,9 +1,3 @@
-variable "security_group_description" {
-  description = "The description of the security group."
-  type        = string
-  default     = null
-}
-
 variable "egress_rules" {
   description = "A map of egress rules to add to the security group."
   type = map(object({
@@ -15,7 +9,7 @@ variable "egress_rules" {
     referenced_security_group_id = optional(string)
     to_port                      = optional(number)
   }))
-  default = null
+  default = {}
 }
 
 variable "ingress_rules" {
@@ -29,16 +23,22 @@ variable "ingress_rules" {
     referenced_security_group_id = optional(string)
     to_port                      = optional(number)
   }))
-  default = null
+  default = {}
 }
 
-variable "name" {
+variable "security_group_description" {
+  description = "The description of the security group."
+  type        = string
+  default     = null
+}
+
+variable "security_group_name" {
   description = "The name of the security group."
   type        = string
   default     = null
 }
 
-variable "name_prefix" {
+variable "security_group_name_prefix" {
   description = "Creates a unique name beginning with the specified prefix. Conflicts with name."
   type        = string
   default     = null

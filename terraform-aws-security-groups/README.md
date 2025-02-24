@@ -9,7 +9,7 @@ Terraform module which creates Security Group, Ingress and Egress Rule resources
 module "security_group" {
   source = "../"
 
-  name                       = "Test Security Group"
+  security_group_name        = "Test Security Group"
   security_group_description = "This is a test security group."
   ingress_rules = {
     rule_1 = {
@@ -71,11 +71,11 @@ module "security_group" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_egress_rules"></a> [egress\_rules](#input\_egress\_rules) | A map of egress rules to add to the security group. | <pre>map(object({<br>    cidr_ipv4                    = optional(string)<br>    rule_description             = optional(string)<br>    from_port                    = optional(number)<br>    ip_protocol                  = string<br>    prefix_list_id               = optional(string)<br>    referenced_security_group_id = optional(string)<br>    to_port                      = optional(number)<br>  }))</pre> | `null` | no |
-| <a name="input_ingress_rules"></a> [ingress\_rules](#input\_ingress\_rules) | A map of ingress rules to add to the security group. | <pre>map(object({<br>    cidr_ipv4                    = optional(string)<br>    rule_description             = optional(string)<br>    from_port                    = optional(number)<br>    ip_protocol                  = string<br>    prefix_list_id               = optional(string)<br>    referenced_security_group_id = optional(string)<br>    to_port                      = optional(number)<br>  }))</pre> | `null` | no |
-| <a name="input_name"></a> [name](#input\_name) | The name of the security group. | `string` | `null` | no |
-| <a name="input_name_prefix"></a> [name\_prefix](#input\_name\_prefix) | Creates a unique name beginning with the specified prefix. Conflicts with name. | `string` | `null` | no |
+| <a name="input_egress_rules"></a> [egress\_rules](#input\_egress\_rules) | A map of egress rules to add to the security group. | <pre>map(object({<br>    cidr_ipv4                    = optional(string)<br>    rule_description             = optional(string)<br>    from_port                    = optional(number)<br>    ip_protocol                  = string<br>    prefix_list_id               = optional(string)<br>    referenced_security_group_id = optional(string)<br>    to_port                      = optional(number)<br>  }))</pre> | `{}` | no |
+| <a name="input_ingress_rules"></a> [ingress\_rules](#input\_ingress\_rules) | A map of ingress rules to add to the security group. | <pre>map(object({<br>    cidr_ipv4                    = optional(string)<br>    rule_description             = optional(string)<br>    from_port                    = optional(number)<br>    ip_protocol                  = string<br>    prefix_list_id               = optional(string)<br>    referenced_security_group_id = optional(string)<br>    to_port                      = optional(number)<br>  }))</pre> | `{}` | no |
 | <a name="input_security_group_description"></a> [security\_group\_description](#input\_security\_group\_description) | The description of the security group. | `string` | `null` | no |
+| <a name="input_security_group_name"></a> [security\_group\_name](#input\_security\_group\_name) | The name of the security group. | `string` | `null` | no |
+| <a name="input_security_group_name_prefix"></a> [security\_group\_name\_prefix](#input\_security\_group\_name\_prefix) | Creates a unique name beginning with the specified prefix. Conflicts with name. | `string` | `null` | no |
 | <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | The VPC to create the security group in. | `string` | `null` | no |
 ## Outputs
 

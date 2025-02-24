@@ -1,7 +1,7 @@
 module "security_group" {
   source = "../"
 
-  name                       = "Test Security Group"
+  security_group_name        = "Test Security Group"
   security_group_description = "This is a test security group."
   ingress_rules = {
     rule_1 = {

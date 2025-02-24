@@ -14,12 +14,12 @@
 
 resource "aws_security_group" "this" {
   description = var.security_group_description
-  name_prefix = var.name_prefix
-  name        = var.name
+  name_prefix = var.security_group_name_prefix
+  name        = var.security_group_name
   vpc_id      = var.vpc_id
 
   tags = {
-    Name = var.name
+    Name = var.security_group_name
   }
 }
 
@@ -32,7 +32,7 @@ resource "aws_security_group" "this" {
 #-------------------------------------------------- 
 
 resource "aws_vpc_security_group_ingress_rule" "this" {
-  for_each = var.ingress_rules != null ? var.ingress_rules : {}
+  for_each = var.ingress_rules
 
   ip_protocol       = each.value.ip_protocol
   security_group_id = aws_security_group.this.id
@@ -50,7 +50,7 @@ resource "aws_vpc_security_group_ingress_rule" "this" {
 }
 
 resource "aws_vpc_security_group_egress_rule" "this" {
-  for_each = var.egress_rules != null ? var.egress_rules : {}
+  for_each = var.egress_rules
 
   ip_protocol       = each.value.ip_protocol
   security_group_id = aws_security_group.this.id
