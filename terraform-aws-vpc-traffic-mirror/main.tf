@@ -1,9 +1,10 @@
-#--------------------------------------------------
+# ----------------------------------------------------------------------------------------------------
 #
 # AWS DOCUMENTATION
 #
 # https://docs.aws.amazon.com/vpc/latest/mirroring/vpc-tm.pdf
-#--------------------------------------------------
+#
+# ----------------------------------------------------------------------------------------------------
 
 /*
 Supported source instance types:
@@ -14,13 +15,13 @@ Supported source instance types:
     Accelerated Computing: DL1 | DL2q | F1 | G3 | G4ad | G4dn | G5 | G5g | Inf1 | P2 | P3 | P3dn | P4d | P4de | VT1
 */
 
-#--------------------------------------------------
+# ----------------------------------------------------------------------------------------------------
 #
 # TRAFFIC MIRROR TARGET
 #
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ec2_traffic_mirror_target
 #
-#--------------------------------------------------
+# ----------------------------------------------------------------------------------------------------
 
 resource "aws_ec2_traffic_mirror_target" "nlb" {
   count = var.target_nlb != null ? 1 : 0
@@ -55,13 +56,13 @@ resource "aws_ec2_traffic_mirror_target" "gwlb" {
   }
 }
 
-#--------------------------------------------------
+# ----------------------------------------------------------------------------------------------------
 #
 # TRAFFIC MIRROR FILTER
 #
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ec2_traffic_mirror_filter
 #
-#--------------------------------------------------
+# ----------------------------------------------------------------------------------------------------
 
 resource "aws_ec2_traffic_mirror_filter" "filter" {
   description      = var.mirror_filter_description
@@ -72,13 +73,13 @@ resource "aws_ec2_traffic_mirror_filter" "filter" {
   }
 }
 
-#--------------------------------------------------
+# ----------------------------------------------------------------------------------------------------
 #
 # TRAFFIC MIRROR FILTER RULE
 #
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ec2_traffic_mirror_filter_rule
 #
-#--------------------------------------------------
+# ----------------------------------------------------------------------------------------------------
 
 resource "aws_ec2_traffic_mirror_filter_rule" "rule_out" {
   for_each = var.egress_filter_rules
@@ -144,13 +145,13 @@ resource "aws_ec2_traffic_mirror_filter_rule" "rule_in" {
   }
 }
 
-#--------------------------------------------------
+# ----------------------------------------------------------------------------------------------------
 #
 # TRAFFIC MIRROR SESSION
 #
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ec2_traffic_mirror_session
 #
-#--------------------------------------------------
+# ----------------------------------------------------------------------------------------------------
 
 resource "aws_ec2_traffic_mirror_session" "session" {
   network_interface_id     = var.source_eni
