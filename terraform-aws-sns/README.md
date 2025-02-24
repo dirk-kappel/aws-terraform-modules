@@ -13,7 +13,7 @@ module "sns" {
   display_name            = "This is an example sns topic."
   kms_master_key_id       = "alias/aws/sns"
   protocol                = "email"
-  sns_topic_policy_json   = try(data.aws_iam_policy_document.aws_iam_policy_document.json, null)
+  sns_topic_policy_json   = data.aws_iam_policy_document.aws_iam_policy_document.json
   create_sns_topic_policy = true
 }
 
