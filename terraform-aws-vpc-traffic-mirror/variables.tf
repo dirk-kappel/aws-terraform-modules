@@ -102,8 +102,8 @@ variable "target_nlb" {
 
 variable "virtual_network_id" {
   description = <<EOT
-The VXLAN ID for the Traffic Mirror session. For more information about the VXLAN protocol, 
-see RFC 7348. If you do not specify a VirtualNetworkId, an account-wide unique id is chosen at random.
+The VXLAN ID for the Traffic Mirror session. For more information about the VXLAN protocol, see RFC 7348. 
+If you do not specify a VirtualNetworkId, an account-wide unique id is chosen at random.
 EOT
   type        = number
   default     = null
