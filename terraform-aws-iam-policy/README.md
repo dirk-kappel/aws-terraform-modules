@@ -10,7 +10,7 @@ module "iam_policy" {
   source = "../"
 
   name        = "Module_Test_Policy"
-  description = "Test policy with allows"
+  description = "Test policy with allows."
   path        = "/test/"
   statements = [
     {
@@ -33,12 +33,17 @@ module "iam_policy" {
   ]
 }
 ```
+## Requirements
 
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.10.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.0 |
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 5.0 |
 
 ## Resources
 
@@ -50,7 +55,7 @@ module "iam_policy" {
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_statements"></a> [statements](#input\_statements) | IAM policy as list of Terraform objects, compatible with Terraform `aws_iam_policy_document` data source<br>except that `source_policy_documents` and `override_policy_documents` are not included.<br>Use inputs `iam_source_policy_documents` and `iam_override_policy_documents` for that. | <pre>list(object({<br>    sid           = optional(string, null)<br>    effect        = optional(string, null)<br>    actions       = optional(list(string), null)<br>    not_actions   = optional(list(string), null)<br>    resources     = optional(list(string), null)<br>    not_resources = optional(list(string), null)<br>    conditions = optional(list(object({<br>      test     = string<br>      variable = string<br>      values   = list(string)<br>    })), [])<br>    principals = optional(list(object({<br>      type        = string<br>      identifiers = list(string)<br>    })), [])<br>    not_principals = optional(list(object({<br>      type        = string<br>      identifiers = list(string)<br>    })), [])<br>  }))</pre> | n/a | yes |
-| <a name="input_description"></a> [description](#input\_description) | The description of the created IAM policy. | `string` | `""` | no |
+| <a name="input_description"></a> [description](#input\_description) | The description of the created IAM policy. | `string` | `null` | no |
 | <a name="input_name"></a> [name](#input\_name) | The name of the role. | `string` | `null` | no |
 | <a name="input_name_prefix"></a> [name\_prefix](#input\_name\_prefix) | Creates a unique name beginning with the specified prefix. Conflicts with name. | `string` | `null` | no |
 | <a name="input_path"></a> [path](#input\_path) | The path to the role. For more information about paths, see IAM Identifiers in the IAM User Guide. | `string` | `"/"` | no |
@@ -61,5 +66,6 @@ module "iam_policy" {
 |------|-------------|
 | <a name="output_policy_arn"></a> [policy\_arn](#output\_policy\_arn) | The ARN assigned by AWS to this policy. |
 | <a name="output_policy_id"></a> [policy\_id](#output\_policy\_id) | The Policy's ID. |
-### Footer
+| <a name="output_policy_json"></a> [policy\_json](#output\_policy\_json) | The policy document. |
+
 <!-- END_TF_DOCS -->

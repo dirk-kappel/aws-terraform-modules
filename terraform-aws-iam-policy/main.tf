@@ -1,8 +1,28 @@
+# ----------------------------------------------------------------------------------------------------
+#
+# AWS DOCUMENTATION
+#
+# https://docs.aws.amazon.com/pdfs/IAM/latest/UserGuide/iam-ug.pdf
+#
+# ----------------------------------------------------------------------------------------------------
+
+
+# ----------------------------------------------------------------------------------------------------
+#
+# IAM POLICY
+#
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document
+#
+# ----------------------------------------------------------------------------------------------------
+
 resource "aws_iam_policy" "this" {
-  name        = var.name
+  policy = data.aws_iam_policy_document.this.json
+
   description = var.description
+  name        = var.name
+  name_prefix = var.name_prefix
   path        = var.path
-  policy      = data.aws_iam_policy_document.this.json
   tags        = var.tags
 
   lifecycle {
