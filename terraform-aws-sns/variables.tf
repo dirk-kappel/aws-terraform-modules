@@ -12,9 +12,12 @@ variable "display_name" {
 
 variable "fifo_topic" {
   description = <<EOT
-Boolean indicating whether or not to create a FIFO (first-in-first-out) topic. 
-FIFO topics can't deliver messages to customer managed endpoints, such as email addresses, mobile apps, SMS, or HTTP(S) endpoints. 
-These endpoint types aren't guaranteed to preserve strict message ordering.
+Boolean indicating whether or not to create a FIFO 
+(first-in-first-out) topic. FIFO topics can't deliver 
+messages to customer managed endpoints, such as email 
+addresses, mobile apps, SMS, or HTTP(S) endpoints. 
+These endpoint types aren't guaranteed to preserve 
+strict message ordering.
 EOT
   type        = bool
   default     = false
