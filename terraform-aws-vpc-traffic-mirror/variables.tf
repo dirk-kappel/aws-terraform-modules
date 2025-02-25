@@ -51,7 +51,11 @@ variable "mirror_target_description" {
 }
 
 variable "packet_length" {
-  description = "The number of bytes in each packet to mirror. These are bytes after the VXLAN header. Do not specify this parameter when you want to mirror the entire packet. To mirror a subset of the packet, set this to the length (in bytes) that you want to mirror."
+  description = <<EOT
+The number of bytes in each packet to mirror. These are bytes after the VXLAN header. 
+Do not specify this parameter when you want to mirror the entire packet. 
+To mirror a subset of the packet, set this to the length (in bytes) that you want to mirror.
+EOT
   type        = number
   default     = null
 }
@@ -63,12 +67,18 @@ variable "session_description" {
 }
 
 variable "session_number" {
-  description = "The session number determines the order in which sessions are evaluated when an interface is used by multiple sessions. The first session with a matching filter is the one that mirrors the packets."
+  description = <<EOT
+The session number determines the order in which sessions are evaluated when an interface is used by multiple sessions. 
+The first session with a matching filter is the one that mirrors the packets.
+EOT
   type        = number
 }
 
 variable "source_eni" {
-  description = "ID of the source network interface. Not all network interfaces are eligible as mirror sources. On EC2 instances only nitro based instances support mirroring."
+  description = <<EOT
+ID of the source network interface. Not all network interfaces are eligible as mirror sources. 
+On EC2 instances only nitro based instances support mirroring.
+EOT
   type        = string
 }
 
@@ -91,7 +101,10 @@ variable "target_nlb" {
 }
 
 variable "virtual_network_id" {
-  description = "The VXLAN ID for the Traffic Mirror session. For more information about the VXLAN protocol, see RFC 7348. If you do not specify a VirtualNetworkId, an account-wide unique id is chosen at random."
+  description = <<EOT
+The VXLAN ID for the Traffic Mirror session. For more information about the VXLAN protocol, 
+see RFC 7348. If you do not specify a VirtualNetworkId, an account-wide unique id is chosen at random.
+EOT
   type        = number
   default     = null
 }
