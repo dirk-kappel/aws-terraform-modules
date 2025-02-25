@@ -1,16 +1,18 @@
-#--------------------------------------------------
+# ----------------------------------------------------------------------------------------------------
+#
 # AWS DOCUMENTATION
 #
 # https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html
 #
-#--------------------------------------------------
+# ----------------------------------------------------------------------------------------------------
 
-#-------------------------------------------------- 
+# ----------------------------------------------------------------------------------------------------
+#
 # SECURITY GROUPS
 #
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group
 #
-#-------------------------------------------------- 
+# ----------------------------------------------------------------------------------------------------
 
 resource "aws_security_group" "this" {
   vpc_id = var.vpc_id
@@ -24,13 +26,14 @@ resource "aws_security_group" "this" {
   }
 }
 
-#-------------------------------------------------- 
+# ----------------------------------------------------------------------------------------------------
+#
 # SECURITY GROUP RULES
 #
 # http://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc_security_group_ingress_rule
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc_security_group_egress_rule
 #
-#-------------------------------------------------- 
+# ----------------------------------------------------------------------------------------------------
 
 resource "aws_vpc_security_group_ingress_rule" "this" {
   for_each = var.ingress_rules
