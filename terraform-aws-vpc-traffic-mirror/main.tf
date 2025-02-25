@@ -8,11 +8,11 @@
 
 /*
 Supported source instance types:
-    General Purpose: A1 | M4 | M5 | M5a | M5ad | M5d | M5dn | M5n | M5zn | M6g | M6gd | Mac1 | Mac2 | Mac2-m1ultra | Mac2-m2 | Mac2-m2pro | T3 | T3a | T4g
-    Compute Optimized: C4 | C5 | C5a | C5ad | C5d | C5n | C6g | C6gd | C6i
-    Memory Optimized: R4 | R5 | R5a | R5ad | R5b | R5d | R5dn | R5n | R6g | R6gd | U-3tb1 | U-6tb1 | U-9tb1 | U-12tb1 | U-18tb1 | U-24tb1 | X1 | X1e | X2gd | X2iezn | z1d
-    Storage Optimized: D2 | D3 | D3en | H1 | I3 | I3en
-    Accelerated Computing: DL1 | DL2q | F1 | G3 | G4ad | G4dn | G5 | G5g | Inf1 | P2 | P3 | P3dn | P4d | P4de | VT1
+  General Purpose: A1 | M4 | M5 | M5a | M5ad | M5d | M5dn | M5n | M5zn | M6g | M6gd | Mac1 | Mac2 | Mac2-m1ultra | Mac2-m2 | Mac2-m2pro | T3 | T3a | T4g
+  Compute Optimized: C4 | C5 | C5a | C5ad | C5d | C5n | C6g | C6gd | C6i
+  Memory Optimized: R4 | R5 | R5a | R5ad | R5b | R5d | R5dn | R5n | R6g | R6gd | U-3tb1 | U-6tb1 | U-9tb1 | U-12tb1 | U-18tb1 | U-24tb1 | X1 | X1e | X2gd | X2iezn | z1d
+  Storage Optimized: D2 | D3 | D3en | H1 | I3 | I3en
+  Accelerated Computing: DL1 | DL2q | F1 | G3 | G4ad | G4dn | G5 | G5g | Inf1 | P2 | P3 | P3dn | P4d | P4de | VT1
 */
 
 # ----------------------------------------------------------------------------------------------------

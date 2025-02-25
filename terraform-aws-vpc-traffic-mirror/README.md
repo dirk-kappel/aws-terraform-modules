@@ -9,9 +9,10 @@ Terraform module which creates VPC Traffic Mirror resources in AWS
 module "vpc_traffic_mirror" {
   source = "../"
 
-  source_eni     = "eni-003fcbfeec2e42e9f"
-  target_eni     = "eni-0f10e30ce1dc2ca5f"
+  source_eni     = var.source_eni
+  target_eni     = var.target_eni
   session_number = 1
+
   egress_filter_rules = {
     "rule1" = {
       rule_description       = "Accept all traffic"
@@ -21,6 +22,7 @@ module "vpc_traffic_mirror" {
       rule_action            = "accept"
     }
   }
+
   ingress_filter_rules = {
     "rule1" = {
       rule_description       = "Accept all traffic"
@@ -32,12 +34,17 @@ module "vpc_traffic_mirror" {
   }
 }
 ```
+## Requirements
 
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.10.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.0 |
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 5.0 |
 
 ## Resources
 
