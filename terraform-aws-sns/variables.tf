@@ -30,10 +30,12 @@ variable "kms_master_key_id" {
 
 variable "name" {
   description = <<EOT
-The name of the topic. Topic names must be made up of only uppercase and lowercase ASCII letters, 
-numbers, underscores, and hyphens, and must be between 1 and 256 characters long. 
-For a FIFO (first-in-first-out) topic, the name must end with the .fifo suffix. 
-If omitted, Terraform will assign a random, unique name. Conflicts with name_prefix.
+The name of the topic. Topic names must be made up of only 
+uppercase and lowercase ASCII letters, numbers, underscores, 
+and hyphens, and must be between 1 and 256 characters long. 
+For a FIFO (first-in-first-out) topic, the name must end with 
+the .fifo suffix. If omitted, Terraform will assign a random, 
+unique name. Conflicts with name_prefix.
 EOT
   type        = string
   default     = null
@@ -47,8 +49,9 @@ variable "name_prefix" {
 
 variable "protocol" {
   description = <<EOT
-The protocol you want to use. Supported protocols include: http, https, email, email-json, sms, sqs, application, lambda. 
-Protocols email, email-json, http and https are also valid but partially supported.
+The protocol you want to use. Supported protocols include: http, 
+https, email, email-json, sms, sqs, application, lambda. Protocols 
+email, email-json, http and https are also valid but partially supported.
 EOT
   default     = "email"
 }
