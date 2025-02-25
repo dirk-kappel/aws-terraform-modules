@@ -9,7 +9,7 @@
 
 # ----------------------------------------------------------------------------------------------------
 #
-# IAM
+# IAM ROLE
 #
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_instance_profile
