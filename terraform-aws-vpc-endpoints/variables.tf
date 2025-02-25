@@ -1,12 +1,7 @@
-variable "environment" {
-  description = "Specifies the deployment environment for the resources. Accepted values are 'dev', 'stage', or 'prod'."
-  type        = string
-  default     = null
-}
-
 variable "gateway_vpc_endpoints" {
   type = map(object({
-    policy          = optional(string, null)
+    name            = optional(string)
+    policy          = optional(string)
     route_table_ids = list(string)
   }))
   description = <<-EOT
@@ -20,8 +15,9 @@ variable "gateway_vpc_endpoints" {
 
 variable "interface_vpc_endpoints" {
   type = map(object({
-    policy              = optional(string, null)
-    private_dns_enabled = bool
+    name                = optional(string)
+    policy              = optional(string)
+    private_dns_enabled = optional(bool)
     vpce_sg_ids         = list(string)
     subnet_ids          = list(string)
   }))
@@ -40,6 +36,6 @@ variable "interface_vpc_endpoints" {
 }
 
 variable "vpc_id" {
-  description = "VPC ID."
+  description = "The ID of the VPC in which the endpoint will be used."
   type        = string
 }
