@@ -8,18 +8,16 @@ terraform {
 }
 
 provider "aws" {
-  region  = var.aws_region
-  profile = var.aws_profile
+  region = var.aws_region
 
   default_tags {
     tags = {
-      Application     = var.application
-      Confidentiality = var.confidentiality
-      Cost_Center     = var.cost_center
-      Created_By      = var.created_by
-      Environment     = var.environment
-      Owner           = var.owner
-      Project         = var.project
+      Application = var.application
+      Cost_Center = var.cost_center
+      Created_By  = var.created_by
+      Environment = var.environment
+      Owner       = var.owner
+      Project     = var.project
     }
   }
 }

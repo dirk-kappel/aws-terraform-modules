@@ -2,20 +2,11 @@ variable "aws_region" {
   type = string
 }
 
-variable "aws_profile" {
-  type = string
-}
-
 #--------------------------------------------------
 # Tags
 #--------------------------------------------------
 
 variable "application" {
-  type    = string
-  default = ""
-}
-
-variable "confidentiality" {
   type    = string
   default = ""
 }
